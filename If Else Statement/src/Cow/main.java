@@ -16,7 +16,7 @@ public class main {
 	static int weight = 0;
 
 	public static void main(String[] args) {
-		// printsout the value of coaster using the age and weight function as
+		// prints out the value of coaster using the age and weight function as
 		// parameters.
 		System.out.println(coaster(age(), weight()));
 
@@ -70,9 +70,11 @@ public class main {
 	}
 
 	public static String coaster(int x, int y) {
+		// requires two integers to work. If they don't have them this code will crash.
+		// creates local copies of the variables it's given
 		int ageC = x;
 		int weightC = y;
-
+		// uses the newly created variable to choose the appropriate response
 		if (ageC <= 10 && weightC < 80) {
 			roller = "This person needs to ride the black roller coaster.";
 		} else if (ageC <= 10 && weightC >= 80 && weightC <= 200) {
@@ -81,13 +83,14 @@ public class main {
 			roller = "This person needs to ride the yellow roller coaster.";
 		} else if (ageC > 10 && ageC <= 20 && weightC < 80) {
 			roller = "This person needs to ride the silver roller coaster.";
-		} else if (ageC > 10 && ageC <= 20 && weightC >= 80 && weightC <= 200) {
 			roller = "This person needs to ride the red roller coaster.";
+		} else if (ageC > 10 && ageC <= 20 && weightC >= 80 && weightC <= 200) {
 		} else if (ageC > 10 && ageC <= 20 && weightC > 200) {
 			roller = "This person needs to ride the purple roller coaster.";
 		} else {
 			roller = "This person needs to ride the pink roller coaster.";
 		}
+		// once the response has been chosen the value is returned.
 		return roller;
 
 	}
