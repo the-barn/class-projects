@@ -4,14 +4,27 @@ import java.util.Scanner;
 
 public class main {
 	static Scanner input = new Scanner(System.in);
+	static boolean ageErr = true;
+	static boolean WeightErr = true;
 	static int age = 0;
 	static int weight = 0;
+
 	public static void main(String[] args) {
-		do {
-			try{
-				System.out.println("Enter your age");
-			}
-		}while(age <=0);
+		System.out.println(age());
 
 	}
+
+	public static int age() {
+		while (ageErr) {
+			if (input.hasNextInt())
+				age = input.nextInt();
+			else {
+				input.next();
+				continue;
+			}
+			ageErr= false;
+		}
+		return age;
+	}
+
 }
