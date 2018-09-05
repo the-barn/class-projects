@@ -16,9 +16,12 @@ public class main {
 
 	public static int age() {
 		while (ageErr) {
-			if (input.hasNextInt())
+			if (input.hasNextInt()) {
 				age = input.nextInt();
-			else {
+				if(age <=0) {
+					continue;
+				}
+			}else{
 				input.next();
 				continue;
 			}
