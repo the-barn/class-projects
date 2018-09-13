@@ -1,4 +1,4 @@
-package Cow;
+package elseIfStatement;
 
 import java.util.Scanner;
 
