@@ -1,5 +1,10 @@
 package string;
-
+/**
+ * Hector Ramirez
+ * Date: 9/24/2018
+ * Assignment: String
+ * Class: Java CIS 016
+ */
 import java.util.Arrays;
 import java.util.Scanner;
 

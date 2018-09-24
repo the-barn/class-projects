@@ -1,5 +1,10 @@
 package bulkString;
-
+/**
+ * Hector Ramirez
+ * Date: 9/24/2018
+ * Assignment: String version 2
+ * Class: Java CIS 016
+ */
 import java.util.Scanner;
 
 public class main {
