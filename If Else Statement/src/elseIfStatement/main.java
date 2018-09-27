@@ -1,10 +1,11 @@
-package elseIfStatement;
 /**
  * Hector Ramirez
  * Date: 9/24/2018
  * Assignment: Else If Statement
  * Class: Java CIS 016
  */
+
+package elseIfStatement;
 
 import java.util.Scanner;
 
