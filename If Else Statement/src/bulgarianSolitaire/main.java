@@ -7,9 +7,10 @@
 package bulgarianSolitaire;
 
 public class main {
-
+	static BulgarianSolitaire test= new BulgarianSolitaire();
 	public static void main(String[] args) {
 
+		test.generator();
 	}
 
 }

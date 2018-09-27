@@ -90,8 +90,8 @@ public class main {
 			roller = "This person needs to ride the yellow roller coaster.";
 		} else if (ageC > 10 && ageC <= 20 && weightC < 80) {
 			roller = "This person needs to ride the silver roller coaster.";
-			roller = "This person needs to ride the red roller coaster.";
 		} else if (ageC > 10 && ageC <= 20 && weightC >= 80 && weightC <= 200) {
+			roller = "This person needs to ride the red roller coaster.";
 		} else if (ageC > 10 && ageC <= 20 && weightC > 200) {
 			roller = "This person needs to ride the purple roller coaster.";
 		} else {
