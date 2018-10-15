@@ -7,10 +7,12 @@
 package bulgarianSolitaire;
 
 public class main {
-	static BulgarianSolitaire test= new BulgarianSolitaire();
-	public static void main(String[] args) {
+	static BulgarianSolitaire test = new BulgarianSolitaire();
 
-		test.generator();
+	public static void main(String[] args) {
+		Card[] temp = test.deck();
+		System.out.println(temp[3].getID());
+		System.out.println(temp[0].getNumber());
 	}
 
 }
