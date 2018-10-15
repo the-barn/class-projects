@@ -6,28 +6,50 @@
  */
 package bulgarianSolitaire;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class BulgarianSolitaire {
-	Card[] cArr = new Card[52];
-	char[] suit = { 'A', 'B', 'C', 'D' };
+	static Random numGen = new Random();
+	static ArrayList<Integer> cards = new ArrayList<Integer>();
 
 	public BulgarianSolitaire() {
 
 	}
 
-	protected void generator() {
-		 int slot = 0;
-		 for (int x = 1; x!=14;x++) {
-			for (int i = 0; i !=4; i++) {
-				Card temp = new Card();
-				temp.setNumber(x);
-				temp.setSuit(suit[i]);
-				cArr[slot] = temp;
-				slot++;
-			}
-		 }
-		for (int i = 0; i != cArr.length; i++) {
-			Card temp = cArr[i];
-			System.out.println(Character.toString(temp.getSuit())+ Integer.toString(temp.getNumber()));
+	public static void main(String[] args) {
+		random(10);
+		for (int i = 0; i != cards.size(); i++) {
+			System.out.println(cards.get(i));
 		}
 	}
+
+	public static void random(int x) {
+		int temp = x;
+		int randomed;
+		while (temp >= 1) {
+			randomed = numGen.nextInt(temp) + 1;
+			cards.add(randomed);
+			temp -= randomed;
+		}
+	}
+
+	public static void compute(ArrayList<Integer> x) {
+		ArrayList<Integer> temp = x;
+		ArrayList<Integer> newArray = new ArrayList<Integer>();
+		int tempNum = 0;
+		for (int i = 0; i != temp.size(); i++) {
+			if (temp.get(i) != 0) {
+				tempNum += 1;
+				newArray.add(temp.get(i));
+
+			}
+		}
+		newArray.add(tempNum);
+	}
+
+	public static void print(int x) {
+		System.out.println(x);
+	}
+
 }
