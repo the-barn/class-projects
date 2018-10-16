@@ -37,7 +37,7 @@ public class main {
 					continue;
 				}
 			} else {
-				input.next();
+				input.next();	
 				continue;
 			}
 			break;
