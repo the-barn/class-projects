@@ -1,7 +1,7 @@
 /**
  * Hector Ramirez
- * Date: 9/24/2018
- * Assignment: 
+ * Date: 10/15/2018
+ * Assignment: Bulgarian Solitaire
  * Class: Java CIS 016
  */
 package bulgarianSolitaire;
