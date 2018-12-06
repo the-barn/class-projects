@@ -1,6 +1,8 @@
 package calculatorScene;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,7 +18,14 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class MyJavaFX extends Application {
+	boolean clear = false;
+	Label myLabel = new Label("");
+	String op = "";
+	double num1 = 0.0;
+	double num2 = 0.0;
+
 	@Override // Override the start method in the Application class
+
 	public void start(Stage primaryStage) throws Exception {
 		double sum = 45.6;
 
@@ -24,7 +33,6 @@ public class MyJavaFX extends Application {
 		StackPane pane = new StackPane();
 		GridPane grid = new GridPane();
 
-		Label myLabel = new Label("123456");
 		myLabel.prefWidthProperty().bind(pane.widthProperty());
 		myLabel.prefHeightProperty().bind(pane.heightProperty());
 		myLabel.setFont(Font.font("Courier", FontWeight.BOLD, FontPosture.REGULAR, 20));
@@ -107,10 +115,140 @@ public class MyJavaFX extends Application {
 		primaryStage.setTitle("MyJavaFX"); // Set the stage title
 		primaryStage.setScene(scene); // Place the scene in the stage
 		primaryStage.show(); // Display the stage
+
+		btDec.setOnAction((event) -> {
+			operating(event);
+		});
+
+		btDiv.setOnAction((event) -> {
+			operating(event);
+		});
+
+		btMul.setOnAction((event) -> {
+			operating(event);
+		});
+
+		btMin.setOnAction((event) -> {
+			operating(event);
+		});
+
+		btPlu.setOnAction((event) -> {
+			operating(event);
+		});
+
+		btEqu.setOnAction((event) -> {
+			operating(event);
+		});
+
+		bt1.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt2.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt3.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt4.setOnAction((event) -> {
+			numbering(event);
+		});
+		bt5.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt6.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt7.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt8.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt9.setOnAction((event) -> {
+			numbering(event);
+		});
+
+		bt0.setOnAction((event) -> {
+			numbering(event);
+		});
 	}
 
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public double compute(double first, double second, String operation) {
+		switch (operation) {
+		case "+":
+			return first + second;
+		case "-":
+			return first - second;
+		case "X":
+			return first * second;
+		case "/":
+			if (second == 0) {
+				return 0;
+			}
+			return first / second;
+		default:
+			return 0;
+		}
+
+	}
+
+//	public double compute(double first, String operation) {
+//		switch (operation) {
+//		case"root":
+//			return 0;
+//		case"x^2":
+//			return 0;
+//		}
+//		return 0.0;
+//	}
+
+	public void numbering(ActionEvent event) {
+		if (clear == true) {
+			myLabel.setText("");
+			clear = false;
+		}
+		String num = ((Button) event.getSource()).getText();
+		myLabel.setText(myLabel.getText() + num);
+	}
+
+	public void operating(ActionEvent event) {
+		String operator = ((Button) event.getSource()).getText();
+		if (operator.equals(".") == true) {
+			String num = ((Button) event.getSource()).getText();
+			myLabel.setText(myLabel.getText() + num);
+		} else if (operator.equals("=") == false) {
+			if (op.isEmpty() == false) {
+				return;
+			}
+			op = operator;
+			num1 = Double.parseDouble(myLabel.getText());
+			myLabel.setText("");
+		} else {
+			if (op.isEmpty() == true) {
+				return;
+			}
+			num2 = Double.parseDouble(myLabel.getText());
+			double result = compute(num1, num2, op);
+
+			if ((result == Math.floor(result)) && !Double.isInfinite(result)) {
+				myLabel.setText(String.valueOf((int) result));
+			} else {
+				myLabel.setText(String.valueOf(result));
+			}
+			op = "";
+			clear = true;
+		}
 	}
 
 }
